@@ -1,0 +1,589 @@
+
+R version 4.1.0 (2021-05-18) -- "Camp Pontanezen"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R ist freie Software und kommt OHNE JEGLICHE GARANTIE.
+Sie sind eingeladen, es unter bestimmten Bedingungen weiter zu verbreiten.
+Tippen Sie 'license()' or 'licence()' für Details dazu.
+
+R ist ein Gemeinschaftsprojekt mit vielen Beitragenden.
+Tippen Sie 'contributors()' für mehr Information und 'citation()',
+um zu erfahren, wie R oder R packages in Publikationen zitiert werden können.
+
+Tippen Sie 'demo()' für einige Demos, 'help()' für on-line Hilfe, oder
+'help.start()' für eine HTML Browserschnittstelle zur Hilfe.
+Tippen Sie 'q()', um R zu verlassen.
+
+> print("HelloWorld")
+[1] "HelloWorld"
+> for (x in 1:10){
++ print(x)
++ }
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+> #this is a comment
+> print("Comment")
+[1] "Comment"
+> "comment" #this is a comment
+[1] "comment"
+> name <- "Nadina"
+> age <- 40
+>
+> print(age)
+[1] 40
+> print(name)
+[1] "Nadina"
+> tier = "hund"
+> print(tier)
+[1] "hund"
+> tier¨
+Fehler: unerwartete Eingabe in "tier¨"
+> name
+[1] "Nadina"
+> name
+[1] "Nadina"
+> age
+[1] 40
+> paste("Der Name der Person lautert", name)
+[1] "Der Name der Person lautert Nadina"
+> aname <- "Der Name der Perosn lautet"
+> paste(aname, name)
+[1] "Der Name der Perosn lautet Nadina"
+> num1 <- 345
+> num2 <- 45
+> num1 +num2
+[1] 390
+> num1 - num2
+[1] 300
+> num1 * num2
+[1] 15525
+> num1 / num2
+[1] 7.666667
+> var 1 <- var2 <- var3 <- "orange"
+Fehler: unerwartete numerische Konstante in "var 1"
+> var1 <- var2 <- var3 <- "orange"
+> var1
+[1] "orange"
+> var2
+[1] "orange"
+> var3
+[1] "orange"
+> # legal variable names:
+> myvar <- "John"
+> my_var <- "John"
+> maVar <- "John"
+> MYVAR <- "John"
+> myvar2 <- "John"
+> .myvar <- "John"
+>
+> # Illegal variable names:
+> 2var <- "John"
+Fehler: unerwartetes Symbol in "2var"
+> my-var <- "John"
+Fehler in my - var <- "John" : Objekt 'my' nicht gefunden
+> my var <- "John"
+Fehler: unerwartetes Symbol in "my var"
+>
+> my_var <- 30 # my_var is type numeric
+> my_var <- "Sally" # my_var is now of type character (aka string)
+>
+> #numeric
+> x <- 10.5
+> calss(x)
+Fehler in calss(x) : konnte Funktion "calss" nicht finden
+> calss(x)
+Fehler in calss(x) : konnte Funktion "calss" nicht finden
+> class(x)
+[1] "numeric"
+> # integer
+> x <- 1000L
+> calss(x)
+Fehler in calss(x) : konnte Funktion "calss" nicht finden
+> class(x)
+[1] "integer"
+> # complex
+> x <- 9i +3
+> class(x)
+[1] "complex"
+> # character/string
+> x <- "R is exciting"
+> class(x)
+[1] "character"
+> # logical/boolean
+> x <- TRUE
+> class(x)
+[1] "logical"
+> x <- 10.5 # numeric
+> y <- 10L  # integer
+> z <- 1i   # complex
+>
+> #You can convert from one type to another with the following functions:
+>
+> #as.numeric / as.integer / as.complex()
+>
+> x <- 1L #Integer
+> y <- 2 #numeric
+>
+> a <- as.numeric(x)
+> b <- as.integer(y)
+> x
+[1] 1
+> y
+[1] 2
+>
+> calss(a)
+Fehler in calss(a) : konnte Funktion "calss" nicht finden
+> class(a)
+[1] "numeric"
+> class(b)¨
+Fehler: unerwartete Eingabe in "class(b)¨"
+> class(b)
+[1] "integer"
+> plot(1:10, type="l")
+> plot(1:5, type="1")
+Fehler in plot.xy(xy, type, ...) : invalid plot type '1'
+> plot(1:10, type="l")
+> x <- c(5,7,8,7,2,2,9,4,11,12,9,6)
+> y <- c(99,86,87,88,111,103,87,94,78,77,85,86)
+>
+> plot(x, y)
+> x <- c(5,7,8,7,2,2,9,4,11,12,9,6)
+> y <- c(99,86,87,88,111,103,87,94,78,77,85,86)
+>
+> plot(x, y)
+> plot(x, y)
+> max(5, 67, 46,2,2352353)
+[1] 2352353
+> min(345, 546, 575, 345)
+[1] 345
+> sqrt(15)
+[1] 3.872983
+> sqrt(16)
+[1] 4
+> abs(-4.7)
+[1] 4.7
+> ceiling (1.3)
+[1] 2
+> floor(1.4)
+[1] 1
+> 'hello'
+[1] "hello"
+> "hello"
+[1] "hello"
+> str <- "Hello"
+> str
+[1] "Hello"
+> str <-"Lorem ipsum dolor sit amet,
++ consectetur adipiscing elit,
++ sed do eiusmod tempor incididunt
++ ut labore et dolore magna aliqua."
+> str
+[1] "Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit,\nsed do eiusmod tempor incididunt\nut labore et dolore magna aliqua."
+> cta(str)
+Fehler in cta(str) : konnte Funktion "cta" nicht finden
+> cat(str)
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+>  labore et dolore magna aliqua.
+>
+> str2 <- "Hello World"
+> nchar(str)
+[1] 123
+> nchar(str2)
+[1] 11
+> str3 <- "Hello World"
+> grepl("H", str3)
+[1] TRUE
+> grepl("X", str3)
+[1] FALSE
+> strh <- "Hello"
+> strh <- "World"
+> paste(strh)
+[1] "World"
+> strhh <- "Hello"
+> paste(strhh, strh)
+[1] "Hello World"
+> paste(strh, strhh)
+[1] "World Hello"
+>
+>
+> str <- "We are the so-called "Vikings", from the north."
+Fehler: unerwartetes Symbol in "str <- "We are the so-called "Vikings"
+> str <- "We are the so-called \"Vikings"\, from the north."
+Fehler: Unerwartete(s) '\\' in "str <- "We are the so-called \"Vikings"\"
+>  cat(str)
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+>  labore et dolore magna aliqua.
+>
+> str <- "We are the so-called \"Vikings\", from the norht."
+> str
+[1] "We are the so-called \"Vikings\", from the norht."
+> cat(str)
+>  are the so-called "Vikings", from the norht.
+> cat(str)
+>  are the so-called "Vikings", from the norht.
+> str
+[1] "We are the so-called \"Vikings\", from the norht."
+> str cat(str)
+Fehler: unerwartetes Symbol in "str cat"
+> str <- "hfadahfdfa \b ",  22222"
+Fehler: Unerwartete(s) ',' in "str <- "hfadahfdfa \b ","
+> str
+[1] "We are the so-called \"Vikings\", from the norht."
+>
+>
+> # Boolean
+>
+> 10>9
+[1] TRUE
+> 10==9
+[1] FALSE
+> 10<30
+[1] TRUE
+> 10<9
+[1] FALSE
+>
+> #compare var
+> a <- 10
+> b <- 9
+>
+> a >b
+[1] TRUE
+> a == b
+[1] FALSE
+> a < b
+[1] FALSE
+>
+> if (b>a){
++ print("b is greater than a")
++ }
+> wlse{
+Fehler: Unerwartete(s) '{' in "wlse{"
+> else{
+Fehler: Unerwartete(s) 'else' in "else"
+>
+> > if (b>a){
+Fehler: Unerwartete(s) '>' in ">"
+> + print("b is greater than a")
+[1] "b is greater than a"
+Fehler in +print("b is greater than a") :
+  ungültiges Argument für unären Operator
+>
+>
+>
+> if (a > b){
++ print("a is grater than b)
++ }else{
++ print("b is not grater than a")
+Fehler: unerwartetes Symbol in:
+"}else{
+print("b"
+>
+>
+> if (a > b){
++ print("a is grater than b")
++ } else{
++ print("a is not greater than b")}
+[1] "a is grater than b"
+>
+>
+> x <- 56
+> y <- 45
+>
+> x%%y
+[1] 11
+> y%%x
+[1] 45
+> x ^y
+[1] 4.660808e+78
+> x%/%y
+[1] 1
+> # the integer divison (%/%) rounds the result down to the nearest$) rounds the result down to the nearest whole numb                # the integer divison (%/%) rounds the result down to the nearest whole num
+>
+> var1 <- 3
+> var1
+[1] 3
+>
+> var2 <<. 3
+Fehler: unerwartete Eingabe in "var2 <<"
+> var2 <<- 3
+> var2
+[1] 3
+>
+> 3 -> var3
+> var3
+[1] 3
+> 3 ->> var4
+> var4
+[1] 3
+>
+> # <<- is a global assigner
+>
+> #Comparison Operators
+>
+> x <- 12
+> y <- 6
+>
+> y == x
+[1] FALSE
+> y != x
+[1] TRUE
+> # != not equal
+>
+> x > y
+[1] TRUE
+>  x >= y
+[1] TRUE
+> y>= x
+[1] FALSE
+> x <= y
+[1] FALSE
+> y <= x
+[1] TRUE
+>
+> # logical Operators
+>
+> x <- 16
+> y <- 76
+>
+> x && y
+[1] TRUE
+> x&y
+[1] TRUE
+>
+> x > y && 2 <= 14
+[1] FALSE
+> 6 > 4 && 2 <= 14
+[1] TRUE
+>
+> # logical operator combine conditional statements
+>
+> y > x & 6 >= 8
+[1] FALSE
+> y > x & 6 >= 4
+[1] TRUE
+> # Element-wise Logical AND operator. It returns TRUE if both elem$ operator. It returns TRUE if both elements are TR                # Element-wise Logical AND operator. It returns TRUE if both elements are T
+>
+> y > x ! 6 > 3
+Fehler: Unerwartete(s) '!' in "y > x !"
+>
+>
+> # R Miscellaneous Operators
+>
+> x <- 2
+> x <- 1:10
+> x
+ [1]  1  2  3  4  5  6  7  8  9 10
+> x <- 2:10
+> x
+[1]  2  3  4  5  6  7  8  9 10
+> x <- 1:20
+> x
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+> x %in% y
+ [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+>
+> x <- Matrix1 %*% Matrix2
+Fehler: Objekt 'Matrix1' nicht gefunden
+> x <- Matrix1
+Fehler: Objekt 'Matrix1' nicht gefunden
+>
+>
+> a <- 33
+> b <- 200
+>
+> if (b==a{
+Fehler: Unerwartete(s) '{' in "if (b==a{"
+> if (a==b){
++ print("these to var are equal")}
+> else{
+Fehler: Unerwartete(s) 'else' in "else"
+>
+> if ( b > a){
++ print("b is greater than a")}
+[1] "b is greater than a"
+>
+> if (b < a){
++ print("b is grater than a")}else{
++ print("b is not greater than a")}
+[1] "b is not greater than a"
+>
+> a <- 33
+> b <- 33
+>
+> if ( a > b){
++ print("a is greater than b")}else if( a == b){
++ print(" a is equal to b")}
+[1] " a is equal to b"
+>
+>
+> a <- 200
+> b <- 33
+>
+> if( b > a){
++ print(" b is greater than a")}else if( a == b){
++ print (" b is equal to a")}else{
++ print ("b is not grater than a")}
+[1] "b is not grater than a"
+>
+>
+> x <- 41
+>
+> if if (x > 10) {
+Fehler: Unerwartete(s) 'if' in "if if"
+>   print("Above ten")
+[1] "Above ten"
+> if (x > 10) {
++   print("Above ten")
++ if ( x > 20){
++ print("Above 20")}else{
++ print("not above 20")}else{
+Fehler: Unerwartete(s) 'else' in:
+"print("Above 20")}else{
+print("not above 20")}else"
+>
+>
+> if (x > 10) {
++   print("Above ten")
++   if (x > 20) {
++     print("and also above 20!")
++   } else {
++     print("but not above 20.")
++   }
++ } else {
++   print("below 10.")
++ }
+[1] "Above ten"
+[1] "and also above 20!"
+>
+>
+> x <- 33
+>
+> if ( x > 10){
++ print("above ten")
++ if ( x > 20){
++ print("and also above 20")
++ if ( x > 34){
++ print("and also above 34")}else{
++ print("not above 34")}else{
+Fehler: Unerwartete(s) 'else' in:
+"print("and also above 34")}else{
+print("not above 34")}else"
+>
+>
+> > if ( x > 10){
+Fehler: Unerwartete(s) '>' in ">"
+> + print("above ten")
+[1] "above ten"
+Fehler in +print("above ten") : ungültiges Argument für unären Operator
+> + if ( x > 20){
++ + print("and also above 20")
++ + if ( x > 34){
++ + print("and also above 34")}else{
++ + print("not above 34")}
++
++ a <- 200
++ b <- 33
++ c <- 500
++
++ if (a > b & c > a){
++   print("Both conditions are true")
++ }
++
++
++
++
++ }
+[1] "and also above 20"
+Fehler in +print("and also above 20") :
+  ungültiges Argument für unären Operator
+>
+> a <- 200
+> b <- 33
+> c <- 500
+>
+> if (a > b & c > a){
++   print("Both conditions are true")
++ }
+[1] "Both conditions are true"
+>
+>
+> if ( a > b & c > a){
++ print("Both statments are TRUE")}else{
++ print("one stantement is False")}
+[1] "Both statments are TRUE"
+>
+> if ( a > b & c < a){
++  print("Both statments are TRUE")}else{
++ + print("one stantement is False")}
+[1] "one stantement is False"
+Fehler in +print("one stantement is False") :
+  ungültiges Argument für unären Operator
+>
+>  if ( a > b & c < a){
+
+> +  print("Both statments are TRUE")}else{
+Fehler: Unerwartete(s) '}' in "+  print("Both statments are TRUE")}"
+>
+>
+>  if ( a > b & c < a){
++ +  print("Both statments are TRUE")}else{
++ + print("one stantement is False")}
+[1] "one stantement is False"
+Fehler in +print("one stantement is False") :
+  ungültiges Argument für unären Operator
+>
+> if ( a < b & c > a){
++ print("TRUE")}else{
++ print("FALSE")}
+[1] "FALSE"
+>
+>
+> a <- 200
+> b <- 33
+> c <- 500
+>
+> if (a > b | a > c){
++   print("At least one of the conditions is true")
++ }
+[1] "At least one of the conditions is true"
+>
+>
+>  if (a > b | a > c){
++  if (a > b | a > c){
+
+> +   print("At least one of the conditions is true
++
++
++ }
++ )
++ }
++
++
++
++
++ )}
++ printfd
++ i <- 1
++ while (i < 6) {
++   print(i)
++   i <- i + 1
++ }
++ }}}}
++ ;
++
++
++
